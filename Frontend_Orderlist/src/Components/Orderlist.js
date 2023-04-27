@@ -22,18 +22,18 @@ function Orderlist(){
         return(
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="#">Order List</a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+                    <a className="navbar-brand" href="/">Order List</a>
+                    {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent"> 
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">Home </a></li>
+                                <a className="nav-link" href="/">Home </a></li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">About Us</a></li>
+                                    <a className="nav-link"href="/" >About Us</a></li>
                                 
                                       </ul> 
                                         
-                                            </div>
+                                            </div> */}
                                             </nav>
                                         
                 
@@ -41,10 +41,11 @@ function Orderlist(){
     
     <div className="mb-2 d-flex justify-content-between align-items-center">
         
-        <div className="position-relative">
+        {/* <div className="position-relative">
             <span className="position-absolute search"><i className="fa fa-search"></i></span>
-            <input className="form-control w-100" placeholder="Search by orderid, date..."/>
-        </div>
+            <input type="number" className="form-control w-100" placeholder="Search by orderid, date..."/>
+            <button type="submit">submit</button>
+        </div> */}
         
        
         
@@ -55,10 +56,13 @@ function Orderlist(){
       <thead>
         <tr className="bg-light">
           <th scope="col" width="5%"></th>
-          <th scope="col" width="5%">id</th>
-          <th scope="col" width="20%">date</th>
-          <th scope="col" width="10%">status</th>
-          <th scope="col" width="20%">total</th>
+          <th scope="col" width="5%">Number</th>
+          <th scope="col" width="20%">Date</th>
+          <th scope="col" width="5%">Customer</th>
+          <th scope="col" width="5%">Paid</th>
+          <th scope="col" width="10%">Status</th>
+          <th scope="col" width="5%">Items</th>
+          <th scope="col" width="20%">Total</th>
          
           
         </tr>
@@ -69,9 +73,12 @@ function Orderlist(){
             order =>
             <tr key={order.id}>
                 <td><input className="form-check-input" type="checkbox"/></td>
-                <td>{order.id}</td>
+                <td>{order.order_no}</td>
                 <td>{order.date}</td>
+                <td>{order.customer}</td>
+                <td>{order.paid}</td>
                 <td>{order.status}</td>
+                <td>{order.items}</td>
                 <td>{order.total}</td>
             </tr>
             
